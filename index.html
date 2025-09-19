@@ -1,15 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/scss/style.scss">
-  <title>Silencio-Dashboard</title>
+  <link rel="stylesheet" href="./src/scss/style.scss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Project DashBoard - Practice</title>
 </head>
+
 <body>
 
+  <div class="dashboard">
 
-  
-  <script type="modulo" src="src/javascript/main.js"></script>
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!--  Header -->
+    <header class="header">
+      <div class="header__left">
+        <button class="header__mobile-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="header__search">
+          <i class="header__search-icon fas fa-search"></i>
+          <input type="text" class="header__search-input" placeholder="Search...">
+        </div>
+      </div>
+
+      <div class="header__right">
+        <button class="header__theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="header__notification">
+          <i class="header__notification-icon fas fa-bell"></i>
+          <span class="header__notification-badge">3</span>
+        </div>
+
+        <div class="header__profile">
+          <img src="assets/img/client-4.jpg" alt="User profile photo" class="header__profile-image">
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar-->
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__logo">
+        <i class="sidebar__logo-icon fas fa-code"></i>
+        <h1 class="sidebar__logo-text">Silencio</h1>
+      </div>
+
+      <div class="sidebar__nav-title">Main Menu</div>
+      <div class="sidebar__nav-links">
+        <a href="#" class="sidebar__nav-item sidebar__nav-item--active">
+          <i class="sidebar__nav-icon fas fa-home"></i>
+          <span class="sidebar__nav-text">DashBoard</span>
+        </a>
+
+        <a href="#" class="sidebar__nav-item">
+          <i class="sidebar__nav-icon fas fa-project-diagram"></i>
+          <span class="sidebar__nav-text">Project</span>
+        </a>
+
+        <a href="#" class="sidebar__nav-item">
+          <i class="sidebar__nav-icon fas fa-calendar-alt"></i>
+          <span class="sidebar__nav-text">Calendar</span>
+        </a>
+
+        <a href="#" class="sidebar__nav-item">
+          <i class="sidebar__nav-icon fas fa-users"></i>
+          <span class="sidebar__nav-text">Team</span>
+        </a>
+
+        <a href="#" class="sidebar__nav-item">
+          <i class="sidebar__nav-icon fas fa-chart-pie"></i>
+          <span class="sidebar__nav-text">Reports</span>
+        </a>
+
+        <a href="#" class="sidebar__nav-item">
+          <i class="sidebar__nav-icon fas fa-cog"></i>
+          <span class="sidebar__nav-text">Setting</span>
+        </a>
+      </div>
+
+      <div class="sidebar__nav-title">Team Members</div>
+      <div class="sidebar__team-members">
+        <div class="sidebar__team-member">
+          <img src="assets/img/client-2.jpg" class="sidebar__member-avatar" alt="foto-2">
+          <span class="sidebar__member-name">Rebecka Doe</span>
+        </div>
+
+        <div class="sidebar__team-member">
+          <img src="assets/img/client-3.jpg" class="sidebar__member-avatar" alt="foto-3">
+          <span class="sidebar__member-name">John Sparrow</span>
+        </div>
+
+        <div class="sidebar__team-member">
+          <img src="assets/img/client-4.jpg" class="sidebar__member-avatar" alt="foto-4">
+          <span class="sidebar__member-name">Minda Rohan</span>
+        </div>
+
+        <div class="sidebar__team-member">
+          <img src="assets/img/client-5.jpg" class="sidebar__member-avatar" alt="foto-5">
+          <span class="sidebar__member-name">Frodo Black</span>
+        </div>
+
+        <div class="sidebar__team-member">
+          <img src="assets/img/client-6.jpg" class="sidebar__member-avatar" alt="foto-6">
+          <span class="sidebar__member-name">Anne Bonny</span>
+        </div>
+      </div>
+    </aside>
+
+
+    <!-- Main Content-->
+    <main class="content">
+
+      <!-- Welcome Banner-->
+      <div class="welcome-banner">
+        <h1>Welcome Back, Alex!</h1>
+        <p>Tou have 3 ongoing project.
+          2 deadlines are approaching
+          this week
+        </p>
+        <button class="btn btn-light">
+          <i class="fas fa-plus"></i>Create new project
+        </button>
+      </div>
+
+      <!-- Profile Cards-->
+      <div class="profile-card card">
+        <img src="assets/img/client-4.jpg" alt="foto" class="profile-card__image">
+
+        <div class="profile-card__info">
+          <h2 class="profile-card__name">Minda Rohan</h2>
+          <p class="profile-card__role">Project Manager</p>
+        </div>
+
+        <div class="profile-card__progress">
+          <svg class="profile-card__circle" width="100" height="100" viewBox="0 0 100 100">
+            <circle class="profile-card__circle-bg" cx="50" cy="50" r="45" />
+            <circle class="profile-card__circle-fill" cx="50" cy="50" r="45" />
+          </svg>
+
+          <div class="profile-card__progress-text">75%</div>
+
+          <div class="profile-card__status">
+            <div class="profile-card__status-item">
+              <span class="profile-card__status-value">12</span>
+              <span class="profile-card__status-label">Projects</span>
+            </div>
+
+            <div class="profile-card__status-item">
+              <span class="profile-card__status-value">24</span>
+              <span class="profile-card__status-label">Tasks</span>
+            </div>
+
+            <div class="profile-card__status-item">
+              <span class="profile-card__status-value">89%</span>
+              <span class="profile-card__status-label">Success</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  Projects-Section -->
+      <section class="projects">
+        <div class="section-title">
+          <h2>Ongoing Project</h2>
+          <a href="#" class="view-all">
+            View All <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="projects__grid">
+
+          <!-- Project 1 -->
+          <div class="projects__item">
+            <div class="projects__header">
+              <div class="projects__title">
+                <h3>
+                  <span class="projects__priority projects__priority--high"></span>
+                  Website Redesign
+                </h3>
+                <span class="projects__category projects__category--design">Design</span>
+              </div>
+              <div class="projects__time">
+                <i class="fas fa-clock"></i> 3 Weeks
+              </div>
+            </div>
+
+            <div class="projects__progress">
+              <div class="projects__progress-info">
+                <span class="projects__progress-title">Project Progress</span>
+                <span>75%</span>
+              </div>
+              <div class="projects__progress-bar">
+                <div class="projects__progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="projects__footer">
+              <div class="projects__avatars">
+                <img src="assets/img/client-2.jpg" class="projects__avatar">
+                <img src="assets/img/client-1.jpg" class="projects__avatar">
+                <img src="assets/img/client-6.jpg" class="projects__avatar">
+              </div>
+              <div class="projects__days">
+                <i class="fas fa-calendar"></i> 12 days left
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="projects__item">
+            <div class="projects__header">
+              <div class="projects__title">
+                <h3>
+                  <span class="projects__priority projects__priority--medium"></span>
+                  Mobile App Development
+                </h3>
+                <span class="projects__category projects__category--development">Development</span>
+              </div>
+              <div class="projects__time">
+                <i class="fas fa-clock"></i> 5 Weeks
+              </div>
+            </div>
+
+            <div class="projects__progress">
+              <div class="projects__progress-info">
+                <span class="projects__progress-title">Project Progress</span>
+                <span>50%</span>
+              </div>
+              <div class="projects__progress-bar">
+                <div class="projects__progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="projects__footer">
+              <div class="projects__avatars">
+                <img src="assets/img/client-2.jpg" class="projects__avatar">
+                <img src="assets/img/client-1.jpg" class="projects__avatar">
+                <img src="assets/img/client-6.jpg" class="projects__avatar">
+              </div>
+              <div class="projects__days">
+                <i class="fas fa-calendar"></i> 22 days left
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="projects__item">
+            <div class="projects__header">
+              <div class="projects__title">
+                <h3>
+                  <span class="projects__priority projects__priority--low"></span>
+                  Marketing Campaign
+                </h3>
+                <span class="projects__category projects__category--marketing">Marketing</span>
+              </div>
+              <div class="projects__time">
+                <i class="fas fa-clock"></i> 8 Weeks
+              </div>
+            </div>
+
+            <div class="projects__progress">
+              <div class="projects__progress-info">
+                <span class="projects__progress-title">Project Progress</span>
+                <span>45%</span>
+              </div>
+              <div class="projects__progress-bar">
+                <div class="projects__progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="projects__footer">
+              <div class="projects__avatars">
+                <img src="assets/img/client-2.jpg" class="projects__avatar">
+                <img src="assets/img/client-1.jpg" class="projects__avatar">
+                <img src="assets/img/client-6.jpg" class="projects__avatar">
+              </div>
+              <div class="projects__days">
+                <i class="fas fa-calendar"></i> 24 days left
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!--  Stats Section-->
+      <section class="stats">
+        <div class="stats__header">
+          <h2 class="stats__title">Project Statistics</h2>
+        </div>
+
+        <div class="stats__grid">
+          <!-- Card 1 -->
+          <div class="stats__item">
+            <div class="stats__icon stats__icon--design">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="stats__value">12</div>
+            <div class="stats__label">Total Projects</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="stats__item">
+            <div class="stats__icon stats__icon--development">
+              <i class="fas fa-spinner"></i>
+            </div>
+            <div class="stats__value">5</div>
+            <div class="stats__label">In Progress</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="stats__item">
+            <div class="stats__icon stats__icon--marketing">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stats__value">7</div>
+            <div class="stats__label">Completed</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="timeline">
+        <div class="timeline__header">
+          <h2 class="timeline__title">Task Distribution Timeline</h2>
+          <a href="#" class="timeline__view-all">
+            View Full Timeline <i class="fas fa-arrow"></i>
+          </a>
+        </div>
+
+        <div class="timeline__body">
+          <div class="timeline__users">
+            <div class="timeline__user"><span class="timeline__user-name">Rebecka Doe</span></div>
+            <div class="timeline__user"><span class="timeline__user-name">Jonh Sparrow</span></div>
+            <div class="timeline__user"><span class="timeline__user-name">Minda Rohan</span></div>
+            <div class="timeline__user"><span class="timeline__user-name">Frodo Black</span></div>
+            <div class="timeline__user"><span class="timeline__user-name">Anne Bonny</span></div>
+          </div>
+
+          <div class="timeline__area">
+            <div class="timeline__grid">
+              <div class="timeline__grid-line" style="top: 0;"></div>
+              <div class="timeline__grid-line" style="top: 60px;"></div>
+              <div class="timeline__grid-line" style="top: 120px;"></div>
+              <div class="timeline__grid-line" style="top: 180px;"></div>
+              <div class="timeline__grid-line" style="top: 240px;"></div>
+            </div>
+
+            <div class="timeline__marker" style="left: 0;">Mon</div>
+            <div class="timeline__marker" style="left: 200px;">Tue</div>
+            <div class="timeline__marker" style="left: 400px;">Wed</div>
+            <div class="timeline__marker" style="left: 600px;">Thu</div>
+            <div class="timeline__marker" style="left: 800px;">Fri</div>
+
+            <div class="timeline__task"
+              style="top:20px; left:0; width:120px; background:linear-gradient(90deg,#6883f8,rgb(72,149,239,0.5));">
+              Design Review
+            </div>
+
+            <div class="timeline__task"
+              style="top:20px; left:400px; width:180px; background:linear-gradient(90deg,#92d6e3,rgb(119,163,212,0.6));">
+              Client Meeting
+            </div>
+
+            <div class="timeline__task"
+              style="top:260px; left:200px; width:180px; background:linear-gradient(90deg,#476485,rgb(71,100,133,0.3));">
+              API Integration
+            </div>
+
+            <div class="timeline__task"
+              style="top:75px; left:596px; width:180px; background:linear-gradient(90deg,#060606,rgb(0,0,0,0.3));">
+              Content Creation
+            </div>
+
+            <div class="timeline__task"
+              style="top:200px; left:400px; width:180px; background:linear-gradient(90deg,#8800f7,rgb(136,0,247,0.4));">
+              Bug Fixing
+            </div>
+
+            <div class="timeline__task"
+              style="top:135px; left:0; width:180px; background:linear-gradient(90deg,#18e358,rgb(24,227,88,0.5));">
+              Frontend Development
+            </div>
+
+            <div class="timeline__task"
+              style="top:140px; left:800px; width:180px; background:linear-gradient(90deg,#e3188e,rgb(227,24,142,0.4));">
+              Testing
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Users Section -->
+      <section class="users">
+
+        <div class="users__header">
+          <h2 class="users__title">Team Members</h2>
+          <a href="#" class="users__view-all">
+            View All <i class="users__icon fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="users__grid">
+          <!-- User 1 -->
+          <div class="users__card card">
+            <div class="users__avatar">
+              <img src="assets/img/client-4.jpg" alt="Minda Rohan" class="users__avatar-img">
+            </div>
+            <div class="users__info">
+              <h3 class="users__name">Minda Rohan</h3>
+              <p class="users__role">Frontend Developer</p>
+            </div>
+          </div>
+
+          <!-- User 2 -->
+          <div class="users__card card">
+            <div class="users__avatar">
+              <img src="assets/img/client-3.jpg" alt="John Sparrow" class="users__avatar-img">
+            </div>
+            <div class="users__info">
+              <h3 class="users__name">John Sparrow</h3>
+              <p class="users__role">Fullstack Developer</p>
+            </div>
+          </div>
+
+          <!-- User 3 -->
+          <div class="users__card card">
+            <div class="users__avatar">
+              <img src="assets/img/client-2.jpg" alt="Rebecka Doe" class="users__avatar-img">
+            </div>
+            <div class="users__info">
+              <h3 class="users__name">Rebecka Doe</h3>
+              <p class="users__role">Project Manager</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+      <p> &2025 CodeWithSilencio Dashboard. All right reserved</p>
+    </footer>
+
+
 </body>
+<script type="module" src="./src/javascript/main.js"></script>
+
 </html>

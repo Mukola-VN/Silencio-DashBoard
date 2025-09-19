@@ -1,0 +1,65 @@
+@use '../utils/variables' as *;
+
+.stats {
+  grid-area: status;
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__item {
+    background: $card-bg-light;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: $card-shadow-light;
+    border: 1px solid $border-color-light;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: $hover-shadow-light;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $light;
+
+    &--design {
+      background: linear-gradient(135deg, $accent, $secondary);
+    }
+
+    &--development {
+      background: linear-gradient(135deg, $success, $primary);
+    }
+
+    &--marketing {
+      background: linear-gradient(135deg, $warning, $accent);
+    }
+  }
+
+  &__value {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: $text-color-light;
+  }
+
+  &__label {
+    font-size: 0.95rem;
+    color: $gray;
+  }
+}
+

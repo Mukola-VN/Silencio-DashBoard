@@ -1,0 +1,32 @@
+// @mixin theme($theme-map) {
+//   body {
+//     background: map-get($theme-map, body-bg);
+//     color: map-get($theme-map, text-color);
+//   }
+
+//   .card {
+//     background: map-get($theme-map, card-bg);
+//     box-shadow: map-get($theme-map, card-shadow);
+//   }
+
+//   header {
+//     background: map-get($theme-map, header-bg);
+//   }
+
+//   .progress-bar {
+//     background: map-get($theme-map, progress-bar-bg);
+//   }
+
+//   .time {
+//     background: map-get($theme-map, time-bg);
+//   }
+
+//   .footer {
+//     background: map-get($theme-map, footer-bg);
+//     color: map-get($theme-map, footer-text);
+//   }
+
+//   .view-all {
+//     color: map-get($theme-map, view-all-color);
+//   }
+// }

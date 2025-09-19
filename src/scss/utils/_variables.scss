@@ -1,0 +1,55 @@
+// =======================
+// Базові кольори
+// =======================
+$primary: #4361ee;
+$secondary: #3f37c9;
+$accent: #4895ef;
+$success: #4cc9f0;
+$warning: #f72585;
+$dark: #2b2d42;
+$light: #f8f9fa;
+$gray: #8d99ae;
+$sidebar: #1e1f3a;
+
+// =======================
+// Розміри
+// =======================
+$sidebar-width: 280px;
+$sidebar-minimized-width: 80px;
+$header-height: 80px;
+
+// =======================
+// Світла тема
+// =======================
+$body-bg-light: linear-gradient(135deg, #f0f2f5, #e4e7f0);
+$text-color-light: #2b2d42;
+$card-bg-light: white;
+$header-bg-light: white;
+$progress-bar-bg-light: white;
+$time-bg-light: #f0f2f5;
+$border-color-light: #e2e8f0;
+$shadow-light: 0 5px 20px rgba(0, 0, 0, 0.3);
+$hover-shadow-light: 0 12px 25px rgba(0, 0, 0, 0.1);
+$view-all-color-light: #4361ee;
+$grid-line-light: #bdbfc1;
+$footer-bg-light: #2b2d42;
+$footer-text-light: white;
+$card-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+// =======================
+// Темна тема
+// =======================
+$body-bg-dark: linear-gradient(135deg, #121212, #1a1a1a);
+$text-color-dark: #f8f9fa;
+$card-bg-dark: #1e1f3a;
+$header-bg-dark: #1e1f3a;
+$progress-bar-bg-dark: #2b2d42;
+$time-bg-dark: #2b2d42;
+$border-color-dark: #3a3c5a;
+$shadow-dark: 0 5px 20px rgba(0, 0, 0, 0.2);
+$hover-shadow-dark: 0 12px 25px rgba(0, 0, 0, 0.3);
+$view-all-color-dark: #70e4ff;
+$grid-line-dark: #3a3c5a;
+$footer-bg-dark: #121212;
+$footer-text-dark: #e407f0;
+$card-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.15);

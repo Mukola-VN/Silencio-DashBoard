@@ -1,0 +1,16 @@
+@use '../utils/variables' as *;
+
+.content {
+  background: oklch(92.2% 0 0);
+  grid-area: content ;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 2rem;
+  grid-template-areas: 
+  "welcome profile" 
+  "project status" 
+  "timeline timeline" 
+  "users users";
+}

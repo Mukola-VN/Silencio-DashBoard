@@ -1,0 +1,151 @@
+@use '../utils/variables' as *;
+
+.timeline {
+  background: $card-bg-light;
+  grid-area: timeline;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow-y: auto;
+  box-shadow: $card-shadow-light;
+  border: 1px solid $border-color-light;
+  transition: background 0.3s ease;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $text-color-light;
+  }
+
+  &__view-all {
+    font-size: 0.9rem;
+    color: $view-all-color-light;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($view-all-color-light, 10%);
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  &__users {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 120px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    &-name {
+      font-weight: 600;
+      color: $text-color-light;
+      cursor: pointer;
+    }
+  }
+
+  &__area {
+    position: relative;
+    min-width: 1000px;
+  }
+
+  &__grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $grid-line-light;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    top: 0;
+    font-size: 0.8rem;
+    color: $gray;
+  }
+
+  &__task {
+    position: absolute;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: $light;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: $hover-shadow-light;
+    }
+
+//  // 📌 Модифікатори
+//     &--design-review {
+//       @include task(20px, 0, 120px, linear-gradient(90deg, $primary, rgba($accent, 0.5)));
+//     }
+//     &--client-meeting {
+//       @include task(20px, 400px, 180px, linear-gradient(90deg, $success, rgba($primary, 0.6)));
+//     }
+//     &--api {
+//       @include task(260px, 200px, 180px, linear-gradient(90deg, $dark, rgba($dark, 0.3)));
+//     }
+//     &--content {
+//       @include task(75px, 596px, 180px, linear-gradient(90deg, $gray, rgba($dark, 0.3)));
+//     }
+//     &--bug {
+//       @include task(200px, 400px, 180px, linear-gradient(90deg, $warning, rgba($warning, 0.4)));
+//     }
+//     &--frontend {
+//       @include task(135px, 0, 180px, linear-gradient(90deg, $success, rgba($success, 0.5)));
+//     }
+//     &--testing {
+//       @include task(140px, 800px, 180px, linear-gradient(90deg, $accent, rgba($warning, 0.4)));
+//     }
+//   }
+
+//   /* 📌 кастомний скрол */
+//   &::-webkit-scrollbar {
+//     width: 8px;
+//   }
+//   &::-webkit-scrollbar-track {
+//     background: rgba(0, 0, 0, 0.1);
+//     border-radius: 4px;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background: rgba(0, 0, 0, 0.3);
+//     border-radius: 4px;
+//   }
+//   &::-webkit-scrollbar-thumb:hover {
+//     background: rgba(0, 0, 0, 0.5);
+//   }
+// }
+  }
+}

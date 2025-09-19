@@ -1,0 +1,112 @@
+@use '../utils/variables' as *;
+
+.profile-card {
+  grid-area: profile;
+  background: linear-gradient(135deg, #fefeff, #d2def0);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--card);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $hover-shadow-light;
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  &__info {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #09214e, #2a5298);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  &__role {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  &__progress {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__circle {
+    width: 100px;
+    height: 100px;
+
+    &-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 10;
+    }
+
+    &-fill {
+      fill: none;
+      stroke: #4a90e2;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 283;
+      stroke-dashoffset: calc(283 - (283 * 75) / 100);
+      transition: stroke-dashoffset 0.5s ease;
+    }
+  }
+
+  &__progress-text {
+    position: absolute;
+    top: 35%;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 100%;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-value {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    &-label {
+      font-size: 0.85rem;
+      color: #555;
+    }
+  }
+}

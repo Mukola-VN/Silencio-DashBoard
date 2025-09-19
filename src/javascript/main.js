@@ -1,24 +1,57 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+function toggleMobileMenu() {
+  sidebar.classList.toggle('active');
+  mobileOverlay.classList.toggle('active');
+  document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+function closeMobileMenu() {
+  sidebar.classList.remove('active');
+  mobileOverlay.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Event listeners
+menuToggle.addEventListener('click', toggleMobileMenu);
+mobileOverlay.addEventListener('click', closeMobileMenu);
+
+// Close menu on escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+    closeMobileMenu();
+  }
+});
+
+// Close menu when clicking on nav items (mobile only)
+const navItems = document.querySelectorAll('.nav-item');
+navItems.forEach(item => {
+  item.addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) {
+      closeMobileMenu();
+    }
+
+    // Remove active class from all nav items
+    navItems.forEach(nav => nav.classList.remove('active'));
+    // Add active class to clicked item
+    this.classList.add('active');
+  });
+});
+
+// Theme toggle functionality (optional)
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', function () {
+  // Add your theme switching logic here
+  console.log('Theme toggle clicked');
+});
+
+// Handle window resize
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 768) {
+    closeMobileMenu();
+  }
+}); 
