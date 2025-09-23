@@ -1,16 +1,52 @@
 @use '../utils/variables' as *;
 
+/* Body and *    */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+
 }
 
-body {
-  background: $body-bg-light;
-  color: $text-color-light;
+  body {
+    background: $body-bg-light;
+    color: $text-color-light;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+
+  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+} 
+/*    */
+
+
+
+/* DashBoard Area   */
+.dashboard {
+  display:  grid;
+  grid-template-columns: $sidebar-width 1fr ;
+  grid-template-rows: $header-height 1fr auto;
+  grid-template-areas: 
+    "sidebar header" 
+    "sidebar content"
+    "sidebar footer";
+  transition: all 0.3s ease;  
   min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+    z-index: 100;
+}    
+/*   */
+
+/* Mobile overlay*/
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  rgba(0,0,0,0.5);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}  
+/*  */
 

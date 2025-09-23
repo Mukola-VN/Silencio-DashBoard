@@ -1,1 +1,167 @@
 @use '../utils/variables' as *;
+
+.projects{
+  
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+
+  &__time {
+    background: #f0f2f5;
+    padding: 0.5rem;
+    border-radius: 16px;
+  }
+
+  &__view-all {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color:$text-color-light;
+ }
+
+  &__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem ;
+  }
+
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+  background: linear-gradient(
+    135deg,
+    rgb(223, 227, 240),
+    rgb(228, 236, 230),
+    rgb(215, 221, 239)
+  );
+   padding: 1.5rem ;
+   border-radius: 16px;
+   box-shadow:  0 5px 20px rgba(0, 0, 0, 0.3);
+   transition: transform 0.6s ease, box-shadow 0.3s ease;
+
+&:hover {
+  transform: scale(1.03);
+  box-shadow: $hover-shadow-light;
+  cursor: pointer;
+ }
+}
+
+
+&__topbar {
+  display: flex;
+  justify-content: space-between;
+  
+
+    
+&-title {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  }
+
+&-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  &.indicator-high { background: #ff6b6b; }
+  &.indicator-medium { background: #ffd166; }
+  &.indicator-low { background: #06d6a0; }
+}
+
+&-design,
+ &-development,
+  &-marketing{
+  display: inline-block;
+  width: fit-content; 
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 1rem;
+  background: $newgray;
+  color: $primary;
+    
+}
+  }
+
+&__progress {
+  margin-top: 1rem;
+
+&-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+
+ & span {
+  padding-bottom: 0.8rem;
+  color: black;
+  font-size: 1rem;
+
+  }
+ }
+
+&-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+ }
+
+&-fill {
+  fill: none;
+  stroke: none;
+  stroke-width: 5;
+  height: 100%;
+  background: linear-gradient(
+  130deg,
+  #D8BFD8,
+  hsl(249, 80%, 70%),
+  #D8BFD8
+  );
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  
+  &.fill-high {
+    width: 75%;
+  }
+  &.fill-medium {
+    width: 50%;
+  }
+  &.fill-low {
+    width: 25%;
+   }
+  }
+ } 
+
+ &__days {
+  background: #f0f2f5;
+  padding: 0.7rem;
+  border-radius: 16px;
+ }
+
+&__footer {
+  display: flex;
+  justify-content: space-between;
+  
+&-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  }
+ }
+
+
+
+}

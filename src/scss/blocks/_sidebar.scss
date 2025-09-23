@@ -1,114 +1,146 @@
+
 @use '../utils/variables' as *;
 
-.profile-card {
-  grid-area: profile;
-  background: $card-bg-light;
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: $card-shadow-light;
+.sidebar {
+
+  grid-area: sidebar;
+  background: $sidebar;
+  color: white;
+  padding: 0.1rem;
+  box-shadow:$card-shadow-light;
+  z-index: 200;
+  overflow-y: auto;
+  height: 100%;
+  position: sticky;
+  top: 0;
   transition: all 0.3s ease;
-  cursor: pointer;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $hover-shadow-light;
-  }
-
-  &__image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid $card-bg-light;
-    box-shadow: $shadow-light;
-    margin-bottom: 1.5rem;
-  }
-
-  &__info {
-    margin-bottom: 1.5rem;
-    width: 100%;
-  }
-
-  &__name {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, $dark, $primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  &__role {
-    background: linear-gradient(135deg, $secondary, $primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+  &__logo {
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 1rem;
+    transition: padding 0.3s ease;
+
+    &-icon {
+      color: $primary;
+      font-size: 1.8rem;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    &-text {
+      font-size: 2.7rem;
+      background: linear-gradient(
+        135deg,
+        #ebd205 50%,
+        #add8e6 50%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
   }
 
-  &__progress {
-    position: relative;
+  &__nav-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $gray;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__nav-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 0 1rem;
   }
 
-  &__circle {
-    width: 100px;
-    height: 100px;
-
-    &-bg {
-      fill: none;
-      stroke: $border-color-light;
-      stroke-width: 10;
-    }
-
-    &-fill {
-      fill: none;
-      stroke: $accent;
-      stroke-width: 10;
-      stroke-linecap: round;
-      stroke-dasharray: 283;
-      stroke-dashoffset: calc(283 - (283 * 75) / 100);
-      transition: stroke-dashoffset 0.5s ease;
-    }
-  }
-
-  &__progress-text {
-    position: absolute;
-    top: 35%;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: $text-color-light;
-  }
-
-  &__status {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    width: 100%;
-
-    &-item {
+    &__nav-item {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      color: #bbb;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      overflow: hidden;
+
+      &:hover,
+      &--active {
+        background: rgba(67, 97, 238, 0.2);
+        color: white;
+      }
+
+      &-icon {
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        min-width: 24px;
+        text-align: center;
+        transition: margin 0.3s ease;
+      }
+
+      &-text {
+        transition: all 0.3s ease;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  
+
+  &__team-member {
+    display: flex;
+ 
+   
+    align-items: center;
+   
+
+      padding: 0.8rem 1.9rem;
+
+      color: #bbb;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      cursor: pointer;
+
+
+
+      &:hover {
+        background: rgba(67, 97, 238, 0.2);
+        color: white;
+        border-radius: 8px;
+      }
     }
 
-    &-value {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: $text-color-light;
-    }
+      &__member-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $primary, $secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+      }
 
-    &-label {
-      font-size: 0.85rem;
-      color: $gray;
+      &__member-name {
+        transition: all 0.3s ease;
+        overflow: hidden;
+        white-space: nowrap;
+      }
     }
-  }
-}
+  
+

@@ -2,25 +2,37 @@
 
 .stats {
   grid-area: status;
+  
+
+  &__title {
+  margin-bottom: 24px;
+  }
+
 
   &__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   }
 
   &__item {
-    background: $card-bg-light;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: $card-shadow-light;
-    border: 1px solid $border-color-light;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(
+    135deg,
+    rgb(223, 227, 240),
+    rgb(228, 236, 230),
+    rgb(215, 221, 239)
+  );
+
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  box-shadow:  0 5px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid $border-color-light;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 
     &:hover {
       transform: scale(1.03);
@@ -37,29 +49,33 @@
     justify-content: center;
     color: $light;
 
+    i {
+      color: $accent ;
+    }
+
     &--design {
-      background: linear-gradient(135deg, $accent, $secondary);
+      background: rgba(128, 128, 128, 0.074); ;
     }
 
     &--development {
-      background: linear-gradient(135deg, $success, $primary);
+      background: rgba(128, 128, 128, 0.074);;
     }
 
     &--marketing {
-      background: linear-gradient(135deg, $warning, $accent);
+      background: rgba(128, 128, 128, 0.074); ;
     }
-  }
+  } 
 
   &__value {
     font-size: 1.3rem;
     font-weight: 500;
     margin-top: 0.5rem;
-    color: $text-color-light;
+    color: black;
   }
 
   &__label {
     font-size: 0.95rem;
-    color: $gray;
+    color: #000;
   }
 }
 
