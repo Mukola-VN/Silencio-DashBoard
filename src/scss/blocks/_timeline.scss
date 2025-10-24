@@ -33,7 +33,8 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: darken($view-all-color-light, 10%);
+      color: $view-all-color-light;
+
     }
   }
 
@@ -106,46 +107,5 @@
       transform: scale(1.02);
       box-shadow: $hover-shadow-light;
     }
-
-//  // 📌 Модифікатори
-//     &--design-review {
-//       @include task(20px, 0, 120px, linear-gradient(90deg, $primary, rgba($accent, 0.5)));
-//     }
-//     &--client-meeting {
-//       @include task(20px, 400px, 180px, linear-gradient(90deg, $success, rgba($primary, 0.6)));
-//     }
-//     &--api {
-//       @include task(260px, 200px, 180px, linear-gradient(90deg, $dark, rgba($dark, 0.3)));
-//     }
-//     &--content {
-//       @include task(75px, 596px, 180px, linear-gradient(90deg, $gray, rgba($dark, 0.3)));
-//     }
-//     &--bug {
-//       @include task(200px, 400px, 180px, linear-gradient(90deg, $warning, rgba($warning, 0.4)));
-//     }
-//     &--frontend {
-//       @include task(135px, 0, 180px, linear-gradient(90deg, $success, rgba($success, 0.5)));
-//     }
-//     &--testing {
-//       @include task(140px, 800px, 180px, linear-gradient(90deg, $accent, rgba($warning, 0.4)));
-//     }
-//   }
-
-//   /* 📌 кастомний скрол */
-//   &::-webkit-scrollbar {
-//     width: 8px;
-//   }
-//   &::-webkit-scrollbar-track {
-//     background: rgba(0, 0, 0, 0.1);
-//     border-radius: 4px;
-//   }
-//   &::-webkit-scrollbar-thumb {
-//     background: rgba(0, 0, 0, 0.3);
-//     border-radius: 4px;
-//   }
-//   &::-webkit-scrollbar-thumb:hover {
-//     background: rgba(0, 0, 0, 0.5);
-//   }
-// }
   }
 }

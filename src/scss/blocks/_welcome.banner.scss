@@ -17,7 +17,9 @@
   border-radius: 16px;
   padding: 2rem;
   color: rgb(15, 15, 15);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  // box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);  
+  box-shadow:  10px 10px 20px rgb(186, 190, 204), -10px -10px 20px #fff;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
